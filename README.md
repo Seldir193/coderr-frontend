@@ -1,38 +1,37 @@
 # Coderr Project
 
-Das Coderr-Projekt ist eine Webanwendung, die es Nutzern ermöglicht, verschiedene Angebote zu verwalten, Bestellungen aufzugeben und Bewertungen zu schreiben. Es besteht aus einem **Frontend**, das mit JavaScript und CSS entwickelt wurde, und einem **Backend**, das Django verwendet.
+The Coderr Project is a web application that allows users to manage various offers, place orders, and write reviews. It consists of a **frontend** developed with JavaScript and CSS and a **backend** powered by Django.
 
-## Inhaltsverzeichnis
-1. [Überblick](#überblick)
+## Table of Contents
+1. [Overview](#overview)
 2. [Features](#features)
-3. [Technologien](#technologien)
+3. [Technologies](#technologies)
 4. [Installation](#installation)
     - [Frontend](#frontend)
     - [Backend](#backend)
-5. [Benutzung](#benutzung)
-6. [API-Endpunkte](#api-endpunkte)
-7. [Hilfsfunktionen im Backend](#hilfsfunktionen-im-backend)
+5. [Usage](#usage)
+6. [API Endpoints](#api-endpoints)
+7. [Helper Functions in the Backend](#helper-functions-in-the-backend)
 8. [Contributing](#contributing)
-9. [Lizenz](#lizenz)
+9. [License](#license)
 
-## Überblick
-
-Das Coderr-Projekt kombiniert **Frontend** und **Backend**, um eine benutzerfreundliche Plattform für das Management von Angeboten und Bestellungen bereitzustellen. Kunden können sich registrieren, Angebote durchsuchen und Bewertungen abgeben. Anbieter können Angebote erstellen, verwalten und Statistiken einsehen.
+## Overview
+The Coderr Project combines **frontend** and **backend** to provide a user-friendly platform for managing offers and orders. Customers can register, browse offers, and leave reviews. Providers can create, manage offers, and view statistics.
 
 ## Features
 
-- Benutzerregistrierung und Login
-- Rollenbasierte Zugriffssteuerung (Kunde/Anbieter)
-- Angebote erstellen, aktualisieren und löschen
-- Bestellungen aufgeben
-- Bewertungen erstellen, bearbeiten und löschen
-- Profile erstellen und aktualisieren
-- Filter- und Suchfunktionalität für Angebote
-- Pagination für Angebote und Bestellungen
-- API-gestützte Datenverwaltung
-- Responsive Design für mobile und Desktop-Geräte
+- User registration and login
+- Role-based access control (Customer/Provider)
+- Create, update, and delete offers
+- Place orders
+- Create, edit, and delete reviews
+- Create and update profiles
+- Filter and search functionality for offers
+- Pagination for offers and orders
+- API-driven data management
+- Responsive design for mobile and desktop devices
 
-## Technologien
+## Technologies
 
 ### Frontend:
 - Vanilla JavaScript
@@ -40,161 +39,161 @@ Das Coderr-Projekt kombiniert **Frontend** und **Backend**, um eine benutzerfreu
 
 ### Backend:
 - [Django](https://www.djangoproject.com/)
-- Django REST Framework für API
-- SQLite für die lokale Datenbank
+- Django REST Framework for API
+- SQLite for local database
 
 ## Installation
 
 ### Frontend
 
-1. Repository klonen:
+1. Clone the repository:
    ```bash
    git clone https://github.com/Seldir193/coderr-frontend.git
    cd coderr-frontend
    ```
-2. Abhängigkeiten installieren:
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. Entwicklungsserver starten:
+3. Start the development server:
    ```bash
    npm start
    ```
 
 ### Backend
 
-1. Repository klonen:
+1. Clone the repository:
    ```bash
    git clone https://github.com/Seldir193/coderr-backend.git
    cd coderr-backend
    ```
-2. Virtuelle Umgebung erstellen und aktivieren:
+2. Create and activate a virtual environment:
    ```bash
    python -m venv env
    source env/bin/activate  # Linux/macOS
    env\Scripts\activate     # Windows
    ```
-3. Abhängigkeiten installieren:
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Datenbank migrieren:
+4. Migrate the database:
    ```bash
    python manage.py migrate
    ```
-5. Entwicklungsserver starten:
+5. Start the development server:
    ```bash
    python manage.py runserver
    ```
 
-## Benutzung
+## Usage
 
-- **Kunde**:
-  - Kann sich registrieren, anmelden und Bestellungen aufgeben.
-  - Bewertungen hinzufügen, bearbeiten und löschen.
-- **Anbieter**:
-  - Kann Angebote erstellen, bearbeiten und löschen.
-  - Hat Zugriff auf Business-Profile und Statistiken.
+- **Customer**: 
+  - Can register, log in, and place orders.
+  - Add, edit, and delete reviews.
+- **Provider**: 
+  - Can create, edit, and delete offers.
+  - Access business profiles and statistics.
 
-## API-Endpunkte
+## API Endpoints
 
-Das Frontend kommuniziert mit den folgenden API-Endpunkten des Backends. Diese Endpunkte werden genutzt, um die Hauptfunktionen der Anwendung bereitzustellen.
+The frontend communicates with the following backend API endpoints to provide core functionality.
 
-### Authentifizierung
+### Authentication
 - **POST** `/registration/`  
-  Registriert einen neuen Benutzer.
+  Register a new user.
 
 - **POST** `/login/`  
-  Loggt einen Benutzer ein.
+  Log in a user.
 
 ---
 
-### Profile
+### Profiles
 - **GET** `/profile/<int:user_id>/`  
-  Abrufen eines Benutzerprofils.
+  Retrieve a user profile.
 
 - **GET** `/profiles/business/`  
-  Abrufen aller Business-Profile.
+  Retrieve all business profiles.
 
 - **GET** `/profiles/business/<int:user_id>/`  
-  Abrufen eines spezifischen Business-Profils.
+  Retrieve a specific business profile.
 
 - **GET** `/profiles/customer/`  
-  Abrufen aller Kundenprofile.
+  Retrieve all customer profiles.
 
 - **GET** `/profiles/customer/<int:user_id>/`  
-  Abrufen eines spezifischen Kundenprofils.
+  Retrieve a specific customer profile.
 
 ---
 
-### Angebote
+### Offers
 - **GET** `/offers/`  
-  Alle Angebote abrufen.
+  Retrieve all offers.
 
 - **POST** `/offers/`  
-  Erstellt ein neues Angebot.
+  Create a new offer.
 
 - **GET** `/offers/<int:id>/`  
-  Details eines Angebots abrufen.
+  Retrieve details of an offer.
 
 ---
 
-### Bestellungen
+### Orders
 - **GET** `/orders/`  
-  Abrufen aller Bestellungen.
+  Retrieve all orders.
 
 - **POST** `/orders/`  
-  Erstellt eine neue Bestellung.
+  Create a new order.
 
 - **GET** `/orders/<int:order_id>/`  
-  Abrufen der Details einer Bestellung.
+  Retrieve details of an order.
 
 - **GET** `/order-count/<int:offer_id>/`  
-  Anzahl der Bestellungen in Bearbeitung für ein Angebot.
+  Count of orders in progress for an offer.
 
 - **GET** `/completed-order-count/<int:user_id>/`  
-  Abrufen der abgeschlossenen Bestellungen eines Benutzers.
+  Retrieve completed orders of a user.
 
 ---
 
-### Bewertungen
+### Reviews
 - **GET** `/reviews/`  
-  Abrufen aller Bewertungen.
+  Retrieve all reviews.
 
 - **POST** `/reviews/`  
-  Erstellt eine neue Bewertung.
+  Create a new review.
 
 - **GET** `/reviews/<int:pk>/`  
-  Abrufen der Details einer Bewertung.
+  Retrieve details of a review.
 
 - **PUT** `/reviews/<int:pk>/`  
-  Bearbeiten einer Bewertung.
+  Edit a review.
 
 - **DELETE** `/reviews/<int:pk>/`  
-  Löschen einer Bewertung.
+  Delete a review.
 
 ---
 
-### Basisinformationen
+### Base Information
 - **GET** `/base-info/`  
-  Abrufen der Basisinformationen der Anwendung.
+  Retrieve base information of the application.
 
 ---
 
-### Benutzerbestellungen
+### User Orders
 - **GET** `/user/orders/`  
-  Abrufen der Bestellungen eines Benutzers.
+  Retrieve orders of a user.
 
-## Hilfsfunktionen im Backend
+## Helper Functions in the Backend
 
-- **profile_helpers.py**: Hilfsfunktionen für Benutzerprofile (z. B. Datenvalidierung).
-- **utils.py**: Allgemeine Hilfsfunktionen wie String- oder Datumsformatierung.
-- **functions.py**: Geschäftsspezifische Logik, die in verschiedenen Views verwendet wird.
+- **profile_helpers.py**: Helper functions for user profiles (e.g., data validation).
+- **utils.py**: General helper functions such as string or date formatting.
+- **functions.py**: Business-specific logic used in various views.
 
 ## Contributing
 
-Beiträge sind willkommen! Erstelle einen Fork des Projekts, führe deine Änderungen durch und sende einen Pull-Request.
+Contributions are welcome! Fork the project, make your changes, and submit a pull request.
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei [LICENSE](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
