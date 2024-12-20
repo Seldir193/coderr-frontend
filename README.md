@@ -16,6 +16,44 @@ Eine Webanwendung für [Zweck deines Projekts]. Das Projekt besteht aus einem **
 9. [Lizenz](#lizenz)
 
 ## Überblick
+Hier ist der Überblick über das Projekt.
+
+## Features
+Hier sind die Features des Projekts.
+
+## Technologien
+Hier sind die verwendeten Technologien.
+
+## Installation
+### Frontend
+Schritte zur Installation des Frontends.
+
+### Backend
+Schritte zur Installation des Backends.
+
+## Benutzung
+So benutzt du die Anwendung.
+
+## API-Endpunkte
+### Authentifizierung:
+- POST `/api/register/` - Benutzerregistrierung
+- POST `/api/login/` - Benutzerlogin
+
+### Angebote:
+- GET `/api/offers/` - Alle Angebote abrufen
+- POST `/api/offers/` - Angebot erstellen
+
+## Hilfsfunktionen im Backend
+Beschreibung der Hilfsfunktionen.
+
+## Contributing
+Anleitung zum Beitragen.
+
+## Lizenz
+Details zur Lizenz.
+
+
+## Überblick
 
 Das Coderr-Projekt ist eine Webanwendung, die es Nutzern ermöglicht, verschiedene Angebote zu verwalten, Bestellungen aufzugeben und Bewertungen zu schreiben. Es besteht aus einem **Frontend**, das mit JavaScript und CSS entwickelt wurde, und einem **Backend**, das Django verwendet.
 
